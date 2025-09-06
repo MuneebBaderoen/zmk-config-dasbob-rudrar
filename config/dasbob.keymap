@@ -13,6 +13,14 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
         };
+
+        swap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <0 2 16 17 18 19>;
+        };
     };
 
     combos {
@@ -85,7 +93,7 @@
 
         Nav {
             bindings = <
-&trans     &trans     &trans    &trans     &trans  /**/  &trans  &trans    &trans    &trans  &trans  
+&trans     &trans     &swap     &trans     &trans  /**/  &trans  &trans    &trans    &trans  &trans  
 &trans     &kp LG(A)  &kp LG(S) &kp LG(C)  &trans  /**/  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
 &kp LG(W)  &kp LG(Z)  &kp LG(X) &kp LG(V)  &trans  /**/  &trans  &trans    &trans    &trans  &trans
                       &trans    &trans     &trans  /**/  &trans  &trans    &trans
